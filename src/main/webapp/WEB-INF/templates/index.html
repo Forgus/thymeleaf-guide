@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Thymeleaf 3 example</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="main.css" />
+	</head>
+	<body>
+		<h1>User hobbies</h1>
+		<ul>
+			<li th:each="hobby : ${hobbies}"
+				th:text="${hobby}">
+				Cinema
+			</li>
+		</ul>
+        <button type="button" onclick="showCode()">Show secret code</button>
+        <div id="code"></div>
+	</body>
+<script>
+	function showCode() {
+		var code = /*[[${code}]]*/ '12345';
+		document.getElementById('code').innerHTML = code;
+	}
+</script>
+</html>
